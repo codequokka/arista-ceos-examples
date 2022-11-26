@@ -32,11 +32,9 @@ $ docker network ls --filter=name=2-node                                        
 Delete docker instances and networks
 ------------------------------------
 ```
-$ docker-compose -f $DOCKER_COMPOSE_FILE down
-[+] Running 5/5
- ⠿ Container docker-compose-ceos2-1  Removed 11.1s
- ⠿ Container docker-compose-ceos1-1  Removed 11.2s
- ⠿ Network docker-compose_net12      Removed 0.2s
- ⠿ Network docker-compose_mgmt       Removed 0.2s
- ⠿ Network docker-compose_net21      Removed 0.1s
+$ docker-topo --destroy docker-topo/2-node.yml
+INFO:__main__:Version 2 requires sudo. Restarting script with sudo
+INFO:__main__:
+unalias ceos1                                                                                                                        unalias ceos2
+INFO:__main__:All devices destroyed successfully
 ```
