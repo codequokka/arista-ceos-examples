@@ -5,7 +5,7 @@ PUBLISH_BASE:
   22/tcp: 10022
   23/tcp: 10123
   443/tcp: 10443
-driver: bridge
+driver: veth
 links:
   - endpoints: [ceos1:eth1, ceos2:eth2]
   - endpoints: [ceos1:eth2, ceos2:eth1]
