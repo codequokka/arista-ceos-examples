@@ -1,0 +1,28 @@
+
+> show running
+! Command: show running-config at line 1
+! device: ceos2 (cEOSLab, EOS-4.29.0.2F-29226602.42902F (engineering build))
+!
+no aaa root
+!
+transceiver qsfp default-mode 4x10G
+!
+service routing protocols model ribd
+!
+agent Bfd shutdown
+agent PowerManager shutdown
+agent LedPolicy shutdown
+agent Thermostat shutdown
+agent PowerFuse shutdown
+agent StandbyCpld shutdown
+agent LicenseManager shutdown
+!
+hostname ceos2
+!
+spanning-tree mode mstp
+!
+interface Ethernet1
+!
+no ip routing
+!
+end
