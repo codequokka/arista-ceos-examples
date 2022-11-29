@@ -1,14 +1,15 @@
 VERSION: 2
-PREFIX: 2-node
+PREFIX: 3-node
+driver: veth
 CEOS_IMAGE: ceos:4.29.0.2F
 CONF_DIR: ./docker-topo/config
 PUBLISH_BASE:
   22/tcp: 10022
   23/tcp: 10123
   443/tcp: 10443
-driver: veth
 links:
-  - endpoints: ["cEOS-1:eth0", "cEOS-2:eth0"]
+  - endpoints: ["cEOS-1:eth0", "cEOS-2:eth0", "cEOS-3:eth0"]
     driver: bridge
   - endpoints: ["cEOS-1:eth1", "cEOS-2:eth2"]
-  - endpoints: ["cEOS-1:eth2", "cEOS-2:eth1"]
+  - endpoints: ["cEOS-1:eth2", "cEOS-3:eth1"]
+  - endpoints: ["cEOS-2:eth1", "cEOS-3:eth2"]
