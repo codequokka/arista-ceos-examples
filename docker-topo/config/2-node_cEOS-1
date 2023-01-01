@@ -1,11 +1,11 @@
 
 > show running
 ! Command: show running-config at line 1
-! device: ceos1 (cEOSLab, EOS-4.29.0.2F-29226602.42902F (engineering build))
+! device: cEOS-1 (cEOSLab, EOS-4.29.0.2F-29226602.42902F (engineering build))
 !
 no aaa root
 !
-username admin role network-admin secret sha512 $6$Pxqy6D7mTP7rdBYn$fypX3PI82jf.YoKrqdQJSPHJaroeo/so6xMB4OgoYHTnfTqn7Lbc1WfWTqc6LM6jAKM9TuHUJ71a7CN5XXFPJ.
+username admin role network-admin secret sha512 $6$y/dYntJKPQlMFpU8$A73wQFfOErKvbmvWALLXppnmncCdJqh.IP74CYfEGCU9WEdgoY1o83PXhhxWXgjV.gTWXgJERAAomBTzKuvCB0
 !
 transceiver qsfp default-mode 4x10G
 !
@@ -19,15 +19,22 @@ agent PowerFuse shutdown
 agent StandbyCpld shutdown
 agent LicenseManager shutdown
 !
-hostname ceos1
+hostname cEOS-1
 !
 spanning-tree mode mstp
+!
+clock timezone Asia/Tokyo
 !
 management api http-commands
    no shutdown
 !
 interface Ethernet1
 !
+interface Ethernet2
+!
 no ip routing
+!
+management telnet
+   no shutdown
 !
 end
