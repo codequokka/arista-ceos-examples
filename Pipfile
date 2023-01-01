@@ -5,8 +5,9 @@ name = "pypi"
 
 [packages]
 docker-topo = {git = "https://github.com/networkop/docker-topo.git"}
+packaging = "==21.3"
 
 [dev-packages]
 
 [requires]
-python_version = "3.10"
+python_version = "3.8"
